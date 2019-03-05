@@ -11,6 +11,18 @@
 ; M-g で 行Junp
 (global-set-key "\M-g" 'goto-line)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; １行スクロール
+; これしないとC-n C-pで半ページくらいスクロールする．
+(setq scroll-conservatively 1)
+
+;;; カーソルが行頭にあるときに、C-k を1回打つだけで 
+;;; その行全体が削除されるようにするにはどうしたらいいのでしょうか？ 
+(setq kill-whole-line t)
+
+;;; 最後の行はかならず改行を入れる．
+(setq require-final-newline t)
+
 ;;;;;;;;;;;;;;;;;;;;
 ;; TABコードはスペースで置き換える。
 ;; TABコード入力にはC-q TABを使う。
@@ -22,10 +34,6 @@
 (setq-default truncate-lines nil)
 ;; buffer list表示後カーソルをそこに移動する。
 (define-key ctl-x-map  "\C-b" 'buffer-menu)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; 最後の行はかならず改行を入れる．
-(setq require-final-newline t)
 
 ;;;;;;; バックアップファイル
 ;;; where to put save file 
