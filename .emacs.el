@@ -21,6 +21,9 @@
 ;;; その行全体が削除されるようにするにはどうしたらいいのでしょうか？ 
 (setq kill-whole-line t)
 
+;; カーソルを点滅させない
+;; (blink-cursor-mode nil)
+
 ;;; 最後の行はかならず改行を入れる．
 (setq require-final-newline t)
 
@@ -36,25 +39,16 @@
 ;; buffer list表示後カーソルをそこに移動する。
 (define-key ctl-x-map  "\C-b" 'buffer-menu)
 
-;;;;;;; バックアップファイル
-;;; where to put save file 
-(if (file-exists-p "~/.saves/")
-    (setq auto-save-list-file-prefix "~/.saves/"))
-(setq backup-by-copying t)
-(fset 'make-backup-file-name
-      '(lambda (file)
-	 (concat (expand-file-name "~/.saves/")
-		 (file-name-nondirectory file))
-	 ))
+;; バックアップファイルの作成場所を固定
+(setq make-backup-files t)
+(setq backup-directory-alist
+      (cons (cons "\\.*$" (expand-file-name "~/.saves"))
+            backup-directory-alist))
 
 ;; .emacs に、(show-paren-mode t) と書いておくと、モードにかかわらず、
 ;; カーソル位置の括弧に対応する括弧をハイライト表示できるようになり
 ;; ます。これは、とっても便利です。
 (show-paren-mode t)
-
-;;; kill ring
-;;; kill ring に関する設定
-(setq kill-ring-max 100)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; http://www.fan.gr.jp/~ring/Meadow/meadow.html
@@ -80,3 +74,8 @@
                      (reverse (cdr (assq 'buffer-list (frame-parameters)))) 0)))
 (global-set-key [?\C-,] 'my-grub-buffer)
 (global-set-key [?\C-.] 'bury-buffer)
+
+;; リストを評価したらすべて出て欲しい，他
+(setq eval-expression-print-level nil
+      eval-expression-print-length nil
+      eval-expression-debug-on-error nil)
