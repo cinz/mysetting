@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CsvRules>
+  <Version>20240214.01</Version>
+  <Rule>
+    <Ident>LifCard</Ident>
+    <Name>ライフカード</Name>
+    <FirstLine>明細No.,契約,回数,利用日,利用先,利用金額,ATM利用料,手数料,支払総額,支払回数/何回目,当月支払金額,支払残高</FirstLine>
+    <Format>Id,Memo,Dummy,Date,Desc,Outgo,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy</Format>
+    <Order>Ascent</Order>
+    <Separator>Comma</Separator>
+  </Rule>
+  <Rule>
+    <Ident>pocket card dmm jcb</Ident>
+    <Name>pocket card dmm jcb</Name>
+    <FirstLine>ご利用年月日,ご利用先,ご利用金額(円),割引額(円),ご請求金額(円),,お支払区分,入金,備考（金額単位：円　※現地通貨額は除く）</FirstLine>
+    <Format>Date,Desc,Dummy,Dummy,Outgo,Dummy,Dummy,Dummy,Memo</Format>
+    <Order>Ascent</Order>
+    <Separator>Comma</Separator>
+  </Rule>
+</CsvRules>
