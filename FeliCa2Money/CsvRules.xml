@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CsvRules>
+  <Version>20230416.01</Version>
+  <Rule>
+    <Ident>UltrasoftMoneyLink</Ident>
+    <Name>Ultrasoft MoneyLink (Excel⇒CSV書き出し)</Name>
+    <FirstLine>番号,日付,資産,摘要,照合,金額,費目,内訳,備考</FirstLine>
+    <Format>Dummy,Date,Dummy,Desc,Dummy,Income,Dummy,Memo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>MasterMoney</Ident>
+    <Name>マスターマネー</Name>
+    <FirstLine>日　付,カテゴリー,アカウント,入金額,出金額,メ　モ,グループ</FirstLine>
+    <Format>Date,Desc,Dummy,Income,Outgo,Memo,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+ <!-- 銀行系 -->
+ <Rule>
+   <Ident>MitsubishiTokyoUFJ</Ident>
+   <Name>三菱東京UFJ銀行(Eco通帳未使用)</Name>
+   <BankId>0005</BankId>
+   <FirstLine>"日付","摘要","摘要内容","支払い金額","預かり金額","差引残高"</FirstLine>
+   <Format>Date,Memo,Desc,Outgo,Income,Balance</Format>
+   <Order>Ascent</Order>
+ </Rule>
+
+ <Rule>
+   <Ident>MitsubishiTokyoUFJEco</Ident>
+   <Name>三菱東京UFJ銀行(Eco通帳)</Name>
+   <BankId>0005</BankId>
+   <FirstLine>"日付","摘要","摘要内容","支払い金額","預かり金額","差引残高","メモ","未資金化区分","入払区分"</FirstLine>
+   <Format>Date,Memo,Desc,Outgo,Income,Balance,Dummy,Dummy,Dummy</Format>
+   <Order>Ascent</Order>
+ </Rule>
+
+  <Rule>
+    <Ident>OFXConverter</Ident>
+    <Name>OFXConverter互換</Name>
+    <FirstLine>明細日,明細金額,Money摘要欄,Money備考欄</FirstLine>
+    <Format>Date,Income,Desc,Memo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>JapanNetBank</Ident>
+    <Name>ジャパンネット銀行</Name>
+    <BankId>0033</BankId>
+    <FirstLine>"操作日(年)","操作日(月)","操作日(日)","操作時刻(時)","操作時刻(分)","操作時刻(秒)","取引順番号","摘要","お支払金額","お預り金額","残高"</FirstLine>
+    <Format>Year,Month,Day,Dummy,Dummy,Dummy,Id,Desc,Outgo,Income,Balance</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>SonyBank</Ident>
+    <Name>ソニー銀行</Name>
+    <BankId>0035</BankId>
+    <FirstLine>"お取り引き日","摘要","参考情報","お預け入れ額","お引き出し額","差し引き残高"</FirstLine>
+    <Format>Date,Desc,Memo,Income,Outgo,Balance</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>ebank</Ident>
+    <Name>楽天銀行</Name>
+    <BankId>0036</BankId>
+    <FirstLine>取引日,入出金(円),取引後残高(円),入出金内容</FirstLine>
+    <Format>Date,Income,Balance,Desc</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>SumishinSBI</Ident>
+    <Name>住信SBIネット銀行</Name>
+    <BankId>0038</BankId>
+    <FirstLine>"日付","内容","出金金額(円)","入金金額(円)","残高(円)","メモ"</FirstLine>
+    <Format>Date,Desc,Outgo,Income,Balance,Memo</Format>
+    <Order>Descent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>JibunBank</Ident>
+    <Name>じぶん銀行</Name>
+    <BankId>0039</BankId>
+    <FirstLine>年月日,入金,出金,お取引内容,残高</FirstLine>
+    <Format>Date,Income,Outgo,Desc,Balance</Format>
+    <Order>Descent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>ShinseiBank</Ident>
+    <Name>新生銀行</Name>
+    <BankId>0397</BankId>
+    <FirstLine>"取引日","摘要","出金金額","入金金額","残高"</FirstLine>
+    <Format>Date,Desc,Outgo,Income,Balance</Format>
+    <Order>Descent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>CitiBank</Ident>
+    <Name>シティバンク</Name>
+    <Format>Date,Desc,Income,Dummy,Dummy</Format>
+    <Order>Descent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>TokyoStarBank</Ident>
+    <Name>東京スター銀行</Name>
+    <BankId>0526</BankId>
+    <FirstLine>"日付","お支払い金額","お預かり金額","摘要","残高","備考"</FirstLine>
+    <Format>Date,Outgo,Income,Desc,Balance,Memo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>The Hyakugo Bank, Ltd.</Ident>
+    <Name>百五銀行</Name>
+    <BankId>0155</BankId>
+    <FirstLine>"日付","振替文言","お支払い金額","お預かり金額","摘要","残高","取扱店番"</FirstLine>
+    <Format>Date,memo,Outgo,Income,Desc,Balance,Dummy</Format>
+    <Order>Descent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>HokurikuBank</Ident>
+    <Name>北陸銀行</Name>
+    <BankId>0144</BankId>
+    <FirstLine>"取扱日付","起算日","お支払金額","お預り金額","取引区分","残高","摘要"</FirstLine>
+    <Format>Date,Dummy,Outgo,Income,Dummy,Balance,Desc</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>GunmaBank</Ident>
+    <Name>群馬銀行</Name>
+    <BankId>0128</BankId>
+    <FirstLine>"取扱日付","お支払金額","お預り金額","取引区分","残高","摘要","メモ"</FirstLine>
+    <Format>Date,Outgo,Income,Dummy,Balance,Desc,Memo</Format>
+    <Order>Sort</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>YokohamaBank</Ident>
+    <Name>横浜銀行</Name>
+    <BankId>0138</BankId>
+    <FirstLine>"取扱日付","お支払金額","お預り金額","取引区分","残高","摘要"</FirstLine>
+    <Format>Date,Outgo,Income,Dummy,Balance,Desc</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident></Ident>
+    <Name>三井住友銀行</Name>
+    <FirstLine>"年月日（和暦）","お引出し","お預入れ","お取り扱い内容","残高"</FirstLine>
+    <Format>Date,Outgo,Income,Desc,Balance</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <!-- クレジットカード系 -->
+  <Rule>
+    <Ident>JALCard</Ident>
+    <Name>JALカード</Name>
+    <Format>Dummy,Dummy,Dummy,Dummy,Date,Outgo,Desc</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>SMBCcard</Ident>
+    <Name>三井住友VISAカード</Name>
+    <Format>Date,Desc,Outgo,Dummy,Dummy,Memo</Format>
+    <Order>Sort</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>SMBCcard2</Ident>
+    <Name>三井住友VISAカード(未確定明細)</Name>
+    <Format>Date,Desc,Memo,Dummy,Dummy,Dummy,Outgo,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy</Format>
+    <Order>Sort</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>SAISONCard</Ident>
+    <Name>セゾンカード</Name>
+    <FirstLine>利用日,ご利用店名及び商品名,本人・家族区分,支払区分名称,締前入金区分,利用金額,備考</FirstLine>
+    <Format>Date,Desc,Dummy,Dummy,Dummy,Outgo,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>3SPocketMoney</Ident>
+    <Name>3S Pocket Money</Name>
+    <FirstLine>"ID","日付","分類","備考","金額","支払先","支払方法"</FirstLine>
+    <Format>Id,Date,Memo,Desc,Outgo,Dummy,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>みずほＵＣカード</Ident>
+    <Name>ＵＣカード</Name>
+    <FirstLine>ご利用区分,ご利用日,ご利用者区分,ご利用店,ポイント対象,今回回数,ご利用金額,今回のお支払い金額,備考１,備考２,備考３,備考４,備考５,備考６</FirstLine>
+    <Format>Dummy,Date,Dummy,Desc,Dummy,Dummy,Outgo,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>IdemitsuCard</Ident>
+    <Name>出光カード</Name>
+    <FirstLine>利用日,ご利用店名及び商品名,本人・家族区分,支払区分名称,締前入金区分,利用金額,備考</FirstLine>
+    <Format>Date,Desc,Dummy,Dummy,Dummy,Outgo,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>DCMXCard</Ident>
+    <Name>DCMXカード</Name>
+    <Format>Date,Desc,Dummy,Dummy,Dummy,Outgo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>BICCardInternational</Ident>
+    <Name>ビックカードインターナショナル</Name>
+    <FirstLine>ご利用区分,ご利用日,ご利用者区分,ご利用店,今回回数,ご利用金額,今回のお支払い金額,備考１,備考２,備考３,備考４,備考５,備考６</FirstLine>
+    <Format>Dummy,Date,Dummy,Desc,Dummy,Outgo,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>FamimaTCard</Ident>
+    <Name>ファミマTカード</Name>
+    <FirstLine>ご利用日,ご利用内容/店名,利用区分,ご利用金額,備考</FirstLine>
+    <Format>Date,Desc,Dummy,Outgo,Memo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>GoldPointCardPlus</Ident>
+    <Name>GOLD POINT CARD +</Name>
+    <Format>Date,Desc,Dummy,Dummy,Dummy,Dummy,Outgo,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>RakutenCard</Ident>
+    <Name>楽天カード</Name>
+     <Format>Date,Desc,Dummy,Dummy,Outgo,Dummy,Dummy,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>TokyuTopCard</Ident>
+    <Name>東急TOP&amp;カード</Name>
+    <Format>Date,Desc,Dummy,Dummy,Dummy,Dummy,Outgo,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy</Format>
+    <Order>Sort</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>PocketCard</Ident>
+    <Name>ポケットカード</Name>
+    <FirstLine>ご利用日,ご利用先,ご利用金額,割引額,ご請求金額,,お支払区分,入金,分割払い・海外利用の内容</FirstLine>
+    <Format>Date,Desc,Dummy,Dummy,Outgo,Dummy,Dummy,Income,Memo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>JaccsCard</Ident>
+    <Name>ジャックスカード</Name>
+    <FirstLine>ご利用年月日,ご利用店名/現地通貨額,ご利用都市名など/円換算レート,ご利用者,支払開始年月,支払回数,今回何回目,ご利用金額（円）,手数料・利息・諸費用（円）,今回のお支払金額（円）,お支払後残高（円）</FirstLine>
+    <Format>Date,Desc,Memo,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy,Outgo,Balance</Format>
+    <Order>Ascent</Order>
+  </Rule>
+  
+  <Rule>
+    <Ident>YahooCard</Ident>
+    <Name>ヤフーカード</Name>
+    <FirstLine>ご利用内容,ご利用日,ご利用者,ご利用金額,支払方法,今回回数,お支払い総額,今回お支払金額,適用</FirstLine>
+    <Format>Desc,Date,Dummy,Outgo,Dummy,Dummy,Dummy,Dummy,Memo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>TobuCard</Ident>
+    <Name>東武カード</Name>
+    <Format>Date,Memo,Desc,Dummy,Outgo,Dummy,Dummy,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>BTMUVisa</Ident>
+    <Name>三菱東京UFJ-VISA</Name>
+    <FirstLine>"利用日","利用者","利用区分","利用内容","新規利用額","今回請求額","支払回数","現地通貨額","通貨","為替相場","備考"</FirstLine>
+    <Format>Date,Dummy,Dummy,Desc,Outgo,Dummy,Dummy,Dummy,Dummy,Dummy,Memo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>UFJNicos</Ident>
+    <Name>三菱UFJニコス</Name>
+    <FirstLine>"利用日","利用者","利用区分","利用内容","新規利用額","今回請求額","支払回数","現地通貨額","通貨略称","換算レート","備考"</FirstLine>
+    <Format>Date,Dummy,Dummy,Desc,Dummy,Outgo,Dummy,Dummy,Dummy,Dummy,Memo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>Starlex</Ident>
+    <Name>シェルスターレックスカード</Name>
+    <Format>Dummy,Dummy,Desc,Date,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy,Outgo</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <Rule>
+    <Ident>AEONCard</Ident>
+    <Name>イオンカード</Name>
+    <FirstLine>ご利用日,ご利用者,ご利用先,支払い方法,ご利用金額,備考,,</FirstLine>
+    <Format>Date,Dummy,Desc,Dummy,Outgo,Dummy,Dummy,Dummy</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+  <!-- その他 -->
+  <Rule>
+    <Ident>NishiChugoku</Ident>
+    <Name>西中国信用金庫</Name>
+    <Format>Dummy, Date, Desc, Outgo, Income, Balance</Format>
+    <Order>Ascent</Order>
+  </Rule>
+
+</CsvRules>
