@@ -1,4 +1,6 @@
 @charset "UTF-8";
+
+// https://blog.yamk.net/posts/20210812-custum-firefox91/
 menupopup > menuitem,
 menupopup > menu {
   padding-block: 0.15em !important;
@@ -9,14 +11,15 @@ menupopup > menu {
   --arrowpanel-menuitem-padding: 3px 6px !important;
 }
 
-/*
-#PersonalToolbar .bookmark-item, menuitem {
-    ///* font-family: "Noto Sans CJK JP"; */
-    // color: #333 !important;
-    font-size: 14px !important;
-    //font-weight: 500 !important;
-    padding: 1px 4px !important;
-    //margin-top: -3px !important;
-    //margin-bottom: -3px !important;
-}
-*/
+
+// https://www.aq-m08.com/2018/05/firefox_14.html
+//#PersonalToolbar .bookmark-item, menuitem {
+//    /* font-family: "Noto Sans CJK JP"; */
+//    // color: #333 !important;
+//    font-size: 14px !important;
+//    //font-weight: 500 !important;
+//    padding: 1px 4px !important;
+//    //margin-top: -3px !important;
+//    //margin-bottom: -3px !important;
+//}
+
